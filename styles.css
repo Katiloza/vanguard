@@ -77,7 +77,7 @@ table {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+ #hero{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -88,10 +88,11 @@ table {
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+header h1::before {
     content: "";
-
+    position: absolute;
     left:-.5rem;
+    top: 0.15rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
@@ -116,8 +117,9 @@ table {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 0.3s ease-in-out;
     height: 0;
+    animation: stepUp 1s ease-in-out forwards;
 }
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
@@ -137,10 +139,6 @@ table {
     100% {
         height: var(--height);
     }
-}
-/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar {
-    animation: stepUp 1s ease-in-out forwards;
 }
 
 
