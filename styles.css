@@ -76,6 +76,7 @@ table {
     padding: 1rem 0;
 }
 
+
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
  #hero{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
@@ -85,6 +86,45 @@ table {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    color: white;
+}
+
+#hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    max-width: 600px;
+    margin: 0 auto 1rem auto;
+}
+
+#hero .button {
+    background-color: var(--red);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hero .button:hover {
+    background-color: #cc3700;
+}
+
+/* HEADER */
+header {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem 0;
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    padding-left: 4.25rem; /* space for SVG logo */
+    position: relative;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
@@ -98,6 +138,21 @@ header h1::before {
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
 
 }
+
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    gap: 1.25rem;
+    padding-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
