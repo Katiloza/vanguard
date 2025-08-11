@@ -80,37 +80,45 @@ table {
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
  #hero{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
+    height: 100vh;
     display: grid;
     place-items: center;
     text-align: center;
-    padding: 1rem;
+    padding: 4rem 1rem;
     overflow: hidden;
     color: white;
 }
 
 #hero h2 {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
 #hero p {
-    max-width: 600px;
-    margin: 0 auto 1rem auto;
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 #hero .button {
     background-color: var(--red);
     color: white;
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     font-weight: bold;
-    border-radius: 5px;
+    font-size: 1rem;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 #hero .button:hover {
     background-color: #cc3700;
+}
+
+section {
+    padding: 4rem 0;
 }
 
 /* SECTION HEADINGS */
@@ -120,14 +128,56 @@ section h2 {
     font-weight: bold;
 }
 
+/*What We Offer Section (Cards)*/
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background-color: var(--blue);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+}
+
 /* SERVICES SECTION */
 #services article {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 2rem;
     margin-bottom: 1.5rem;
 }
 
 #services h3 {
     font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
+}
+
+#services .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
 /* TABLE */
@@ -137,11 +187,19 @@ table {
     text-align: left;
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+    font-size: 1rem;
 }
 
 thead {
     background: var(--charcoal);
     color: white;
+}
+
+table th {
+  background: var(--black);
+  color: white;
+  font-weight: 600;
 }
 
 td, th {
@@ -173,6 +231,12 @@ header h1::before {
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
 
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* NAVIGATION */
@@ -239,12 +303,28 @@ form {
     gap: 1rem;
 }
 
+form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+form button {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 1rem;
+  background-color: var(--blue);
+  border-radius: 6px;
+}
+
+
 input, textarea {
     padding: 0.75rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-family: var(--font);
     font-size: 1rem;
+    width: 100%;
 }
 
 button {
@@ -266,8 +346,9 @@ footer {
     background-color: var(--charcoal);
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.875rem;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    background: #1a1a1a;
 }
 
 footer a {
