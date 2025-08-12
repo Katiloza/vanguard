@@ -2,15 +2,15 @@
 
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Tagesschrift&display=swap');
+
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -36,7 +36,24 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    line-height: 1;
+    font-family: var(--font); 
+    background-color: var(--white); 
+    color: var(--charcoal);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font);
+  color: var(--black);
+}
+
+p {
+  font-family: var(--font);
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+
+
 ol, ul {
     list-style: none;
 }
@@ -57,7 +74,7 @@ table {
 :root {
     --blue: #007BFF;
     --red: #FF4500;
-    --white: #EAEAEA;
+    --white: #FFFFFF;
     --black: #000000;
     --charcoal: #333333;
     --font: "Inter", sans-serif;
@@ -72,7 +89,7 @@ table {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 1rem 0;
 }
 
@@ -81,18 +98,19 @@ table {
  #hero{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 100vh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 4rem 1rem;
-    overflow: hidden;
-    color: white;
+    padding: 2rem 1rem;
 }
 
 #hero h2 {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: var(--white);
 }
 
 #hero p {
@@ -100,10 +118,11 @@ table {
     max-width: 700px;
     margin-bottom: 2rem;
     line-height: 1.6;
+    color: var(--white);
 }
 
 #hero .button {
-    background-color: var(--red);
+    background-color: var(--blue);
     color: white;
     text-decoration: none;
     padding: 1rem 2rem;
@@ -115,6 +134,29 @@ table {
 
 #hero .button:hover {
     background-color: #cc3700;
+}
+
+#about {
+    padding: 4rem 0;
+    text-align: left;
+}
+
+#about .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#about h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 1.125rem;
+  color: var(--charcoal);
+  line-height: 1.75;
 }
 
 section {
@@ -160,6 +202,16 @@ section h2 {
 }
 
 /* SERVICES SECTION */
+#services {
+  background: #ffffff;
+  padding: 4rem 0;
+}
+#services h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
 #services article {
     background: white;
     border-radius: 8px;
@@ -213,12 +265,15 @@ header {
     color: var(--white);
     padding: 1rem 0;
     position: relative;
+    box-shadow: 0 4px 20px 0 rgba(0, 123, 255, 0.75); 
+    z-index: 1000;
 }
 
 header h1 {
     font-size: 1.75rem;
     padding-left: 4.25rem; /* space for SVG logo */
     position: relative;
+    color: var(--blue);
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
@@ -250,7 +305,12 @@ nav ul {
 nav a {
     color: var(--white);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 18pt;
+}
+
+ul a {
+    color: var(--blue);
 }
 
 /* THIS ONE IS DONE FOR YOU */
