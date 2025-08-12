@@ -263,19 +263,21 @@ nav li a:hover {
 }
 
 #hero h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 800;
     color: var(--white);
+    margin-bottom: 1.5rem;
 }
 
 #hero p {
-    font-size: 1rem;
+    font-size: 1.25rem;
     max-width: 700px;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem auto; /* 👈 centers the block */
     line-height: 1.6;
     color: var(--white);
+    text-align: center;
 }
+
 
 .button {
     background-color: var(--blue);
