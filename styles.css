@@ -160,12 +160,6 @@ header h1::before {
     display: none;
 }
 
-.menu-toggle-label {
-    cursor: pointer;
-    font-size: 2rem;
-    color: var(--blue);
-    display: block;
-}
 
 header nav {
     display: none; /* Hidden by default */
@@ -181,10 +175,19 @@ header nav {
     display: block;
 }
 
+.menu-toggle-label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--blue);
+    display: block;
+}
+
 nav ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
     padding: 1rem 0;
+    margin: 0;
 }
 
 nav li a {
@@ -193,7 +196,6 @@ nav li a {
     font-size: 1.5rem;
     padding: 1rem;
     display: block;
-    transition: color 0.3s ease;
 }
 
 nav li a:hover {
@@ -279,6 +281,7 @@ nav li a:hover {
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-auto-rows: auto;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -501,9 +504,7 @@ footer a {
 }
 
 
-/* ----------------------------- */
 /* MEDIA QUERY: MEDIUM (≥800px) */
-/* ----------------------------- */
 
 @media (min-width: 800px) {
 
@@ -525,8 +526,29 @@ footer a {
     width: 100%;
   }
 
+  header nav {
+    display: block;
+    position: static;
+    background: none;
+  }
+
+  /* Hide hamburger */
+  .menu-toggle-label,
+  #menu-toggle {
+    display: none;
+  }
+
   nav ul {
+    flex-direction: row;
+    gap: 2rem;
     justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav li a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    color: var(--blue);
   }
 
 }
@@ -536,8 +558,9 @@ footer a {
 @media (min-width: 1024px) {
 
   /* Example: Services grid switches to 3 columns */
-  .service-grid {
+  .services-grid {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
   }
   #hero {
     padding: 6rem 1rem;
