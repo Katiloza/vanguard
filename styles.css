@@ -70,6 +70,7 @@ table {
     border-spacing: 0;
 }
 
+
 /* ROOT VARIABLES */
 :root {
     --blue: #007BFF;
@@ -78,24 +79,130 @@ table {
     --black: #000000;
     --charcoal: #333333;
     --font: "Inter", sans-serif;
+    --nav-height: 60px;
 }
 
-/* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+/* GLOBAL STYLES (mobile first/small) */
+body {
+    font-family: var(--font);
+    background-color: var(--white);
+    color: var(--charcoal);
+    min-width: 400px;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font);
+    color: var(--black);
+}
 
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+p {
+    font-family: var(--font);
+    line-height: 1.6;
+    color: var(--charcoal);
+}
 
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 1rem auto;
+    margin: 0 auto;
     padding: 1rem 0;
 }
 
+section {
+    padding: 2rem 0;
+}
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- #hero{
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* HEADER */
+header {
+    background-color: var(--black);
+    color: var(--white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px 0 rgba(0, 123, 255, 0.75);
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    padding-left: 4.25rem;
+    position: relative;
+    color: var(--blue);
+}
+
+/* SVG Logo */
+header h1::before {
+    content: "";
+    position: absolute;
+    left: -0.5rem;
+    top: 0.15rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+}
+
+/* CSS-only Mobile Menu */
+#menu-toggle {
+    display: none;
+}
+
+.menu-toggle-label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--blue);
+    display: block;
+}
+
+header nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--black);
+    text-align: center;
+}
+
+#menu-toggle:checked ~ nav {
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+nav li a {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+nav li a:hover {
+    color: var(--white);
+}
+
+
+/* HERO SECTION */
+#hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
@@ -104,24 +211,25 @@ table {
     align-items: center;
     text-align: center;
     padding: 2rem 1rem;
+    margin-top: var(--nav-height);
 }
 
 #hero h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--white);
 }
 
 #hero p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     max-width: 700px;
     margin-bottom: 2rem;
     line-height: 1.6;
     color: var(--white);
 }
 
-#hero .button {
+.button {
     background-color: var(--blue);
     color: white;
     text-decoration: none;
@@ -132,203 +240,153 @@ table {
     transition: background-color 0.3s ease;
 }
 
-#hero .button:hover {
-    background-color: #cc3700;
+.button:hover {
+    background-color: #0056b3;
 }
 
+/* ABOUT SECTION */
 #about {
     padding: 4rem 0;
     text-align: left;
 }
 
-#about .container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
 #about h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--black);
-  margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 1rem;
 }
 
 #about p {
-  font-size: 1.125rem;
-  color: var(--charcoal);
-  line-height: 1.75;
-}
-
-section {
-    padding: 4rem 0;
-}
-
-/* SECTION HEADINGS */
-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-/*What We Offer Section (Cards)*/
-.service-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.service-card {
-  background-color: var(--blue);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-
-.service-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: white;
+    font-size: 1.125rem;
+    color: var(--charcoal);
+    line-height: 1.75;
 }
 
 /* SERVICES SECTION */
 #services {
-  background: #ffffff;
-  padding: 4rem 0;
+    background: #f8f9fa;
+    padding: 4rem 0;
 }
+
 #services h2 {
     font-size: 2rem;
     font-weight: 800;
     color: var(--black);
     margin-bottom: 2rem;
 }
-#services article {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: var(--blue);
+    border-radius: 12px;
     padding: 2rem;
-    margin-bottom: 1.5rem;
+    color: var(--white);
+    transition: transform 0.3s ease;
 }
 
-#services h3 {
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
     font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--white);
 }
 
-#services .container {
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: white;
+}
+
+/* RESULTS SECTION */
+#results {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 4rem 0;
+}
+
+#results h2, #results h3 {
+    color: var(--white);
+}
+
+#results p {
+    color: var(--white);
+    margin-bottom: 2rem;
+}
+
+.results-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
-/* TABLE */
+.results-table,
+.bar-chart-container {
+  width: 100%;
+}
+
+/* Table styles */
 table {
     width: 100%;
-    margin: 1rem 0;
+    margin-top: 1rem;
     text-align: left;
-    background: white;
+    background: var(--white);
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    margin-top: 2rem;
-    font-size: 1rem;
 }
 
 thead {
-    background: var(--charcoal);
+    background: var(--black);
     color: white;
 }
 
 table th {
-  background: var(--black);
-  color: white;
-  font-weight: 600;
-}
-
-td, th {
+    background: var(--black);
+    color: var(--white);
+    font-weight: 600;
     padding: 0.75rem;
     border-bottom: 1px solid #ccc;
 }
 
-/* HEADER */
-header {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 1rem 0;
-    position: relative;
-    box-shadow: 0 4px 20px 0 rgba(0, 123, 255, 0.75); 
-    z-index: 1000;
+table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ccc;
+    color: var(--charcoal);
 }
 
-header h1 {
-    font-size: 1.75rem;
-    padding-left: 4.25rem; /* space for SVG logo */
-    position: relative;
-    color: var(--blue);
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
-header h1::before {
-    content: "";
-    position: absolute;
-    left:-.5rem;
-    top: 0.15rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+tbody tr:hover {
+    background-color: #ddd;
 }
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* NAVIGATION */
-nav ul {
-    display: flex;
-    gap: 1.25rem;
-    padding-top: 0.5rem;
-    flex-wrap: wrap;
-}
-
-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18pt;
-}
-
-ul a {
-    color: var(--blue);
-}
-
-/* THIS ONE IS DONE FOR YOU */
+/* Bar Chart */
 #bar-chart {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: flex-end;
-    justify-content: space-around;
     gap: 1rem;
-    height: 300px;
+    height: 250px;
     width: 100%;
     max-width: 800px;
-    padding: 1rem;
     position: relative;
+    padding-bottom: 3rem;
 }
-/* ADD ON TRANSITION ON HEIGHT */
+
 .bar {
-    width: 50px;
+    width: 100%;
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
@@ -336,7 +394,7 @@ ul a {
     height: 0;
     animation: stepUp 1s ease-in-out forwards;
 }
-/* THIS ONE IS DONE FOR YOU */
+
 .bar::after {
     content: attr(data-year);
     position: absolute;
@@ -347,6 +405,7 @@ ul a {
     font-weight: bold;
     color: var(--white);
 }
+
 @keyframes stepUp {
     0% {
         height: 0;
@@ -356,7 +415,21 @@ ul a {
     }
 }
 
-/* FORM STYLES */
+/* CONTACT SECTION */
+#contact {
+    background: var(--black);
+    color: var(--white);
+    padding: 4rem 0;
+}
+
+#contact h2 {
+    color: var(--white);
+}
+
+#contact p {
+    color: var(--white);
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -364,19 +437,11 @@ form {
 }
 
 form label {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: block;
+    color: var(--white);
 }
-
-form button {
-  width: 100%;
-  font-size: 1.1rem;
-  padding: 1rem;
-  background-color: var(--blue);
-  border-radius: 6px;
-}
-
 
 input, textarea {
     padding: 0.75rem;
@@ -385,26 +450,29 @@ input, textarea {
     font-family: var(--font);
     font-size: 1rem;
     width: 100%;
+    background-color: #f0f0f0;
 }
 
-button {
-    padding: 0.75rem 1.5rem;
+button[type="submit"] {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
     background-color: var(--blue);
-    color: white;
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 6px;
+    color: var(--white);
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
 /* FOOTER */
 footer {
     background-color: var(--charcoal);
-    color: white;
+    color: var(--white);
     text-align: center;
     padding: 2rem 0;
     font-size: 0.9rem;
@@ -412,7 +480,7 @@ footer {
 }
 
 footer a {
-    color: white;
+    color: var(--blue);
     text-decoration: underline;
 }
 
